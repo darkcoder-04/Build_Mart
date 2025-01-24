@@ -1,245 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta id="bootstrap-data" sp-bootstrap-data='{"user":false,"country":"IN","countryCodeList":[{"countryCode":"AE","callingCode":"+971"},{"countryCode":"AR","callingCode":"+54"},{"countryCode":"BR","callingCode":"+55"},{"countryCode":"CL","callingCode":"+56"},{"countryCode":"CO","callingCode":"+57"},{"countryCode":"DZ","callingCode":"+213"},{"countryCode":"EC","callingCode":"+593"},{"countryCode":"EG","callingCode":"+20"},{"countryCode":"GH","callingCode":"+233"},{"countryCode":"HK","callingCode":"+852"},{"countryCode":"ID","callingCode":"+62"},{"countryCode":"IN","callingCode":"+91"},{"countryCode":"KE","callingCode":"+254"},{"countryCode":"MA","callingCode":"+212"},{"countryCode":"MX","callingCode":"+52"},{"countryCode":"NG","callingCode":"+234"},{"countryCode":"PE","callingCode":"+51"},{"countryCode":"SA","callingCode":"+966"},{"countryCode":"TH","callingCode":"+66"},{"countryCode":"TZ","callingCode":"+255"},{"countryCode":"UG","callingCode":"+256"},{"countryCode":"VN","callingCode":"+84"},{"countryCode":"ZA","callingCode":"+27"}],"countryNameTranslationMap":{"GH":"Ghana","EG":"Egypt","HK":"Hong Kong SAR China","AE":"United Arab Emirates","IN":"India","TZ":"Tanzania","ZA":"South Africa","CL":"Chile","MX":"Mexico","CO":"Colombia","SA":"Saudi Arabia","BR":"Brazil","AR":"Argentina","UG":"Uganda","TH":"Thailand","MA":"Morocco","PE":"Peru","DZ":"Algeria","VN":"Vietnam","NG":"Nigeria","KE":"Kenya","ID":"Indonesia","EC":"Ecuador"},"previewEnabled":false,"tpaState":"AQALlyeYmMIF8h+gcV44HtCVLVtXr7vDeWot4D8ouwOv99Z8ygCTda3qsLZ5gebbWjF7mVKzwwSGSy9DVbw5OqNR6BskWXUh9l/lF38nRjJ8ABK00pk0qxyfyBzS/6bBT5fRVUMx7pScBU/SOWpCZ0nZrbTt4a8nmUD3O8WiDbhV83l1oQuAD00iVa31wzxdggKTs2HOKmbucDjm9Mnoi3f/lpmNVoPTqgVV88ChIfG76Kosy6/6B0mQ1IrkYWT/qAl+LkQUztfEG+oVaazyV6kFcnKdvrYhFsh1R0o750Kbtph+MJT0DsBvHDD7CP8TLNZdyTW+Aq5leF04lItNsG4yz5CtvjV7MslMarKjoO/m5i3xZTH9fuidhdh1MtEhjuMd6zAAj2/bdP3EPd67qS6Bt2ahVlhaiuROUK+/dBsjasmy36oX/eTbhFhWT5tOzUJU9Avt0/QRzIt/8pDyQZU5CgeEOHFnoifNINC7giKWBnwiJxMdKo0iwh8KOGqTluHMgx42CF34usmWvaMsGgu8ld9Yf0vS8rXJddCRObKYIFOEW00HDXtaoSGSUt7Ym/PzdymfgAqYIfDQb0ArY4KHyzcRp2+XconPMisoUHLU0xgU5zN5hTA78U7ghjR3MKErH0FZXY19Nrw=","flowCtx":"b065ee20-5f03-4ab8-9d35-1de57dd7f675:1734968908","BON":["0","0",653702493]}' sp-component="phoneLogin" sp-translations-data='eyJlcnJvclRpdGxlIjoiRXJyb3IiLCJsb2dpblRpdGxlIjoiTG9naW4iLCJkb250SGF2ZUFuQWNjb3VudCI6IkRvbid0IGhhdmUgYW4gYWNjb3VudD8iLCJjaGVja2JveFJlbWVtYmVyTWUiOiJSZW1lbWJlciBtZSIsImVycm9yRm9ybURlZmF1bHQiOiJPb3BzISBTb21ldGhpbmcgd2VudCB3cm9uZywgcGxlYXNlIHRyeSBhZ2FpbiBvciBjaGVjayBvdXQgb3VyIDxoZWxwTGluaz5oZWxwIGFyZWE8L2hlbHBMaW5rPiIsImVycm9yVW5rbm93biI6Ik9vcHMhIFNvbWV0aGluZyB3ZW50IHdyb25nLCBwbGVhc2UgdHJ5IGFnYWluIG9yIGNoZWNrIG91dCBvdXIgPGhlbHBMaW5rPmhlbHAgYXJlYTwvaGVscExpbms+IiwibG9nSW5Ub1Nwb3RpZnkiOiJMb2cgaW4gdG8gU3BvdGlmeSIsInNpZ25VcEZvclNwb3RpZnkiOiJTaWduIHVwIGZvciBTcG90aWZ5Iiwib3IiOiJvciIsImVudGVyUGhvbmVOdW1iZXIiOiJFbnRlciBwaG9uZSBudW1iZXIiLCJwaG9uZU51bWJlciI6IlBob25lIG51bWJlciIsInBsZWFzZUVudGVyUGhvbmVOdW1iZXIiOiJQbGVhc2UgZW50ZXIgeW91ciBwaG9uZSBudW1iZXIiLCJlcnJvck9ubHlOdW1iZXJzSW5QaG9uZU51bWJlciI6IllvdSBjYW4gb25seSBlbnRlciBudW1iZXJzLiIsImVudGVyQ29kZSI6IkVudGVyIHlvdXIgY29kZSIsIm4tZGlnaXRDb2RlIjoie2RpZ2l0Q291bnR9LWRpZ2l0IGNvZGUiLCJnZXROZXdDb2RlIjoiR2V0IGEgbmV3IGNvZGUiLCJ2ZXJpZnlQaG9uZU51bWJlciI6IldlIHNlbnQgYW4gU01TIHdpdGggYSB7ZGlnaXRDb3VudH0tZGlnaXQgY29kZSB0byB7cGFyc2VkUGhvbmVOdW1iZXJ9LiIsInZlcmlmeVBob25lTnVtYmVyR2VuZXJpYyI6IldlIHNlbnQgYSB7ZGlnaXRDb3VudH0tZGlnaXQgY29kZSB0byB7cGFyc2VkUGhvbmVOdW1iZXJ9LiIsImVycm9yT25seU51bWJlcnNJbkNvZGUiOiJZb3UgY2FuIG9ubHkgZW50ZXIgbnVtYmVycy4iLCJlcnJvclZhbGlkYXRpb25DaGVja1Bob25lTnVtYmVyIjoiQ2hlY2sgeW91ciBwaG9uZSBudW1iZXIuIiwiZXJyb3JWYWxpZGF0aW9uTWFrZVN1cmVQaG9uZU51bWJlcklzUmlnaHQiOiJNYWtlIHN1cmUgeW91ciBwaG9uZSBudW1iZXIgaXMgcmlnaHQuIiwiZXJyb3JWYWxpZGF0aW9uSW52YWxpZENvZGUiOiJUaGlzIGNvZGUgaXMgaW52YWxpZC4gQ2hlY2sgdGhlIFNNUyBhbmQgdHJ5IGFnYWluLiIsImVycm9yU3VibWl0VG9va1Rvb0xvbmdUb0NyZWF0ZSI6Ikl0IHRvb2sgdG9vIGxvbmcgdG8gY29tcGxldGUgeW91ciByZXF1ZXN0LiBUcnkgYWdhaW4uIiwic2lnbnVwUmVxdWlyZWQiOiJXZSBkb24ndCBoYXZlIGFuIGFjY291bnQgZm9yIHthY2NvdW50TmFtZX0uIiwic2lnbnVwV2l0aEVtYWlsT3JGYWNlYm9vayI6IllvdSBjYW4gc2lnbiB1cCB3aXRoIGVtYWlsIG9yIEZhY2Vib29rIGluIHlvdXIgcmVnaW9uLiIsImNvbnRpbnVlV2l0aEFwcGxlIjoiQ29udGludWUgd2l0aCBBcHBsZSIsImNvbnRpbnVlV2l0aEZhY2Vib29rIjoiQ29udGludWUgd2l0aCBGYWNlYm9vayIsIm5leHRTdGVwIjoiTmV4dCJ9'>
-    <title>Signup Page</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-Up Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e0f7fa;  /* Light cyan background */
+      margin: 0;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: url('bgimage1.jpg') no-repeat center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .signup-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .signup-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .form-group .error {
-            color: red;
-            font-size: 14px;
-            display: none;
-        }
-        .form-group .toggle-password {
-            position: relative;
-            cursor: pointer;
-            float: right;
-            margin-right: 10px;
-            margin-top: -28px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .login-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .login-link a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    /* Sign-up Container Styling */
+    .signup-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .signup-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Heading Styling */
+    .signup-container h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #00796b;  /* Teal color */
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Label Styling */
+    .form-label {
+      font-weight: 500;
+      color: #00796b;  /* Teal color */
+    }
+
+    /* Input field styling */
+    .form-control {
+      border-radius: 8px;
+      font-size: 16px;
+      padding: 12px 16px;
+      border: 1px solid #ced4da;
+    }
+
+    .form-control:focus {
+      border-color: #00796b;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Select field styling */
+    .form-select {
+      border-radius: 8px;
+      font-size: 16px;
+      padding: 12px 16px;
+      border: 1px solid #ced4da;
+    }
+
+    /* Button Styling */
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #00796b;
+      border: none;
+      border-radius: 8px;
+      color: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #004d40;
+    }
+
+    /* Additional Mobile Styling */
+    @media (max-width: 480px) {
+      .signup-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="signup-container">
-        <h2>Create your account!!</h2> 
-        <form id="signupForm" method="POST" action="signup.php">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Username">
-                <span class="error" id="usernameError">Please enter a username.</span>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="+91 00000-00000" pattern="\d{10}" title="Enter a 10-digit phone number">
-                <span class="error" id="phoneError">Please enter a valid phone number.</span>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="password">
-                <span class="toggle-password" onclick="togglePassword('password')">&#128065;</span>
-                <span class="error" id="passwordError">Password must be strong (min 8 chars, include letters, numbers, and symbols).</span>
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
-                <span class="toggle-password" onclick="togglePassword('confirmPassword')">&#128065;</span>
-                <span class="error" id="confirmPasswordError">Passwords do not match.</span>
-            </div>
-            <button type="submit">Sign Up</button> 
-        </form>
-        <div class="login-link">
-            Already have an account? <a href="#">Login</a>
-        </div>
-    </div>
+  <div class="signup-container">
+    <h3 class="text-center mb-4">Sign Up</h3>
+    <form action="" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+      </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter mobile number" required pattern="[0-9]{10}">
+      </div>
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select id="role" name="role" class="form-select" required>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+  </div>
 
-    <script>
-        function togglePassword(fieldId) {
-            const field = document.getElementById(fieldId);
-            if (field.type === "password") {
-                field.type = "text";
-            } else {
-                field.type = "password";
-            }
-        }
 
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            let valid = true;
-
-            const usernameInput = document.getElementById('username');
-            const usernameError = document.getElementById('usernameError');
-            if (usernameInput.value.trim() === '') {
-                usernameError.style.display = 'block';
-                valid = false;
-            } else {
-                usernameError.style.display = 'none';
-            }
-
-            const phoneInput = document.getElementById('phone');
-            const phoneError = document.getElementById('phoneError');
-            if (!phoneInput.value.match(/\d{10}/)) {
-                phoneError.style.display = 'block';
-                valid = false;
-            } else {
-                phoneError.style.display = 'none';
-            }
-
-            const passwordInput = document.getElementById('password');
-            const passwordError = document.getElementById('passwordError');
-            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
-            if (!passwordInput.value.match(passwordRegex)) {
-                passwordError.style.display = 'block';
-                valid = false;
-            } else {
-                passwordError.style.display = 'none';
-            }
-
-            const confirmPasswordInput = document.getElementById('confirmPassword');
-            const confirmPasswordError = document.getElementById('confirmPasswordError');
-            if (confirmPasswordInput.value !== passwordInput.value) {
-                confirmPasswordError.style.display = 'block';
-                valid = false;
-            } else {
-                confirmPasswordError.style.display = 'none';
-            }
-
-            if (!valid) {
-                event.preventDefault();
-            } else {
-                alert('Signup successful!');
-            }
-        });
-    </script>
-</body>
-</html>
-<?php
-// Database connection configuration
-$host = 'localhost';       // Database host
-$dbname = 'build_mart';     // Database name
-$username = 'root';        // Database username
-$password = '';            // Database password
+  <?php
+// Database connection details
+$host = "localhost";
+$dbname = "build_mart";
+$db_username = "root"; // Replace with your database username
+$db_password = ""; // Replace with your database password
 
 try {
-    // Create a new PDO instance
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Set the PDO error mode to exception
+    // Connect to the database
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $db_username, $db_password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
-}
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = trim($_POST['username']);
-    $phone = trim($_POST['phone']);
-    $pass = trim($_POST['password']);
-    $confirmPass = trim($_POST['confirmPassword']);
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $username = trim($_POST["username"]);
+        $password = trim($_POST["password"]);
+        $mobile = trim($_POST["mobile"]);
+        $role = trim($_POST["role"]);
 
-    // Validate inputs
-    if (empty($user) || empty($phone) || empty($pass) || empty($confirmPass)) {
-        echo "All fields are required.";
-        exit;
-    }
-
-    if (!preg_match('/^\d{10}$/', $phone)) {
-        echo "Invalid phone number format.";
-        exit;
-    }
-
-    if ($pass !== $confirmPass) {
-        echo "Passwords do not match.";
-        exit;
-    }
-
-    if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/', $pass)) {
-        echo "Password must be at least 8 characters long and include letters, numbers, and symbols.";
-        exit;
-    }
-
-    // Hash the password
-    $hashedPassword = password_hash($pass, PASSWORD_BCRYPT);
-
-    try {
-        // Check if the username or phone already exists
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username OR phone = :phone");
-        $stmt->execute(['username' => $user, 'phone' => $phone]);
+        // Check if the username already exists
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-            echo "Username or phone number already exists.";
+            echo "<script>alert('Username already exists. Please choose another.'); window.location.href = 'login.php';</script>";
             exit;
         }
 
-        // Insert user data into the database
-        $sql = "INSERT INTO users (username, phone, password) VALUES (:username, :phone, :password)";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([
-            'username' => $user,
-            'phone' => $phone,
-            'password' => $hashedPassword,
-        ]);
+        // Hash the password for security
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-        echo "Signup successful!";
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        // Insert the user into the database
+        $stmt = $conn->prepare("INSERT INTO users (username, password, mobile, role) VALUES (:username, :password, :mobile, :role)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $hashed_password);
+        $stmt->bindParam(':mobile', $mobile);
+        $stmt->bindParam(':role', $role);
+
+        if ($stmt->execute()) {
+            echo "<script>alert('Registration successful! You can now log in.'); window.location.href = 'login.php';</script>";
+        } else {
+            echo "<script>alert('Something went wrong. Please try again later.'); window.location.href = 'signup.php';</script>";
+        }
     }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
 ?>
+</body>
+</html>
