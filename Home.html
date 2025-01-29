@@ -17,7 +17,7 @@
             clearTimeout(inactivityTimer);
             // Reset inactivity timer to 2 minutes (120000 ms)
             inactivityTimer = setTimeout(() => {
-                window.location.href = "/build_mart/Home/login.html"; // Change to your login page URL
+                window.location.href = "/build_mart/home/login.php"; // Change to your login page URL
             }, 120000);
         }
 
@@ -95,23 +95,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" title="Raise Complaint">
+                        <a class="nav-link" href="raisecomp.php" title="Raise Complaint">
                             Raise Complaint
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" title="View Complaints">
+                        <a class="nav-link" href="viewcomp01.php" title="View Complaints">
                             View Complaints
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" title="Add to Cart">
+                        <a class="nav-link" href="checkout.php" title="Add to Cart">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>
                     <!-- Power-off Icon -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#" title="Logout">
+                        <a class="nav-link" href="/home/login.php" title="Logout">
                             <i class="fa fa-power-off"></i>
                         </a>
                     </li>
@@ -144,28 +144,29 @@
     </div>
 
     <!-- Image Zoom Section -->
-    <section id="products" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">OUR PRODUCTS</h2>
-            <div class="zoom-container">
-                <div class="zoom-box">
-                    <a href="link" target="_blank">
-                        <img src="IMAGE4.jpeg" alt="Zoom Image 1">
-                    </a>
-                </div>
-                <div class="zoom-box">
-                    <a href="link" target="_blank">
-                        <img src="IMAGE5.jpeg" alt="Zoom Image 2">
-                    </a>
-                </div>
-                <div class="zoom-box">
-                    <a href="link" target="_blank">
-                        <img src="IMAGE6.jpeg" alt="Zoom Image 3">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="products" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">OUR PRODUCTS</h2>
+    <div class="zoom-container">
+      <div class="zoom-box">
+        <a href="cement.php">
+          <img src="IMAGE4.jpeg" alt="Zoom Image 1">
+        </a>
+      </div>
+      <div class="zoom-box">
+        <a href="steel.php">
+          <img src="IMAGE5.jpeg" alt="Zoom Image 2">
+        </a>
+      </div>
+      <div class="zoom-box">
+        <a href="bricks.php">
+          <img src="IMAGE6.jpeg" alt="Zoom Image 3">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-3">
