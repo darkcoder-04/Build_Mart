@@ -7,23 +7,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle Accept or Deny actions
-if (isset($_POST['accept'])) {
-    $complaint_id = $_POST['complaint_id'];
-    $sql = "UPDATE complaints SET status='Accepted' WHERE complaint_id=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $complaint_id);
-    $stmt->execute();
-    $stmt->close();
-} elseif (isset($_POST['deny'])) {
-    $complaint_id = $_POST['complaint_id'];
-    $sql = "UPDATE complaints SET status='Denied' WHERE complaint_id=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $complaint_id);
-    $stmt->execute();
-    $stmt->close();
-}
-
 // Fetch complaints data
 $sql = "SELECT * FROM complaints ORDER BY complaint_date DESC";
 $result = $conn->query($sql);
@@ -47,14 +30,6 @@ $conn->close();
         h2 {
             margin-bottom: 20px;
         }
-        .btn-accept {
-            background-color: #28a745;
-            color: white;
-        }
-        .btn-deny {
-            background-color: #dc3545;
-            color: white;
-        }
     </style>
 </head>
 <body>
@@ -71,7 +46,6 @@ $conn->close();
                     <th>Details</th>
                     <th>Date Submitted</th>
                     <th>Status</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -84,28 +58,17 @@ $conn->close();
                             <td><?php echo $row['complaintdetails']; ?></td>
                             <td><?php echo $row['complaint_date']; ?></td>
                             <td><?php echo $row['status']; ?></td>
-                            <td>
-                                <?php if ($row['status'] == 'Pending') { ?>
-                                    <form method="POST" action="">
-                                        <input type="hidden" name="complaint_id" value="<?php echo $row['complaint_id']; ?>">
-                                        <button type="submit" name="accept" class="btn btn-accept btn-sm">Accept</button>
-                                        <button type="submit" name="deny" class="btn btn-deny btn-sm">Deny</button>
-                                    </form>
-                                <?php } else { ?>
-                                    <span><?php echo $row['status']; ?></span>
-                                <?php } ?>
-                            </td>
                         </tr>
                     <?php }
                 } else { ?>
-                    <tr><td colspan="8">No complaints found.</td></tr>
+                    <tr><td colspan="7" class="text-center">No complaints found.</td></tr>
                 <?php } ?>
             </tbody>
         </table>
 
         <!-- Back Button -->
         <div class="mt-3">
-            <button onclick="window.location.href='admin_dashboard.php'" class="btn btn-secondary">Back</button>
+            <button onclick="window.location.href='home.html'" class="btn btn-secondary">Back</button>
         </div>
     </div>
 
